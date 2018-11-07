@@ -35,6 +35,9 @@ class HCLocalizableManager: NSObject {
 
     /// 语言bundle
     private var bundle: Bundle?
+    
+    /// 语言更新Block回调
+    private var languageChangeBlock: (() -> Void)?
 
     /**
      * 加载指定bundle中的Key
@@ -50,13 +53,25 @@ class HCLocalizableManager: NSObject {
         guard let path = Bundle.main.path(forResource: bundleName, ofType: "lproj") else { return }
 
         self.bundle = Bundle(path: path)
+        self.currentBundleName = bundleName
 
         UserDefaults.standard.set(bundleName, forKey: HCLocalizableManager.kBundleNameKey)
         UserDefaults.standard.synchronize()
 
         // 发送通知更新语言
         NotificationCenter.default.post(name: HCLocalizableManager.localizableDidChangeNotification, object: nil)
+        
+        languageChangeBlock?()
+        
     }
+    
+    /// 原因刷新回调
+    func localizableDidChange(_ didChange: (() -> Void)?)  {
+        languageChangeBlock = didChange
+    }
+    
+    /// 当前的语言文件
+    var currentBundleName = "en"
 }
 
 // MARK: - 私有方法
@@ -66,7 +81,7 @@ extension HCLocalizableManager {
         if let language = UserDefaults.standard.object(forKey: HCLocalizableManager.kBundleNameKey) as? String {
             updateLanguage(language)
         } else {
-            updateLanguage("en")
+            updateLanguage(currentBundleName)
         }
     }
 }

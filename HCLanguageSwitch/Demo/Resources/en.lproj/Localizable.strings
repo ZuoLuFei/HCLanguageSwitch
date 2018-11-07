@@ -1,0 +1,14 @@
+/* 
+  File.strings
+  HCLanguageSwitch
+
+  Created by ZuoLuFei on 2018/11/7.
+  Copyright © 2018 佐路飞. All rights reserved.
+*/
+"common_cancel"="Cancel";
+"common_confire"="Confirm";
+
+"first_inputName"="Please enter your name";
+"first_name"="name";
+"first_changeLanguage"="Select the language";
+"first_currentLanguage"="Current language:";

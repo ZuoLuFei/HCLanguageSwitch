@@ -7,15 +7,20 @@
 //
 
 import UIKit
+@_exported import SnapKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+//        // 初始化国际化，默认为汉语
+//        HCLocalizableManager.share.updateLanguage("zh-Hans")
+        
+        //主目录
+        print("NSHomeDirectory->\(NSHomeDirectory())")
         return true
     }
 

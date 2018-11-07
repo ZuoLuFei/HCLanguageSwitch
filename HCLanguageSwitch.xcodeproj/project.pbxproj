@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66AD9E1A2FC77F83AD3DC18D /* Pods_HCLanguageSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3E77A7F9EE3B8CA84E2120 /* Pods_HCLanguageSwitch.framework */; };
 		A8EF3DCB2192B9D800B47957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3DCA2192B9D800B47957 /* AppDelegate.swift */; };
 		A8EF3DCD2192B9D800B47957 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3DCC2192B9D800B47957 /* ViewController.swift */; };
 		A8EF3DD02192B9D800B47957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EF3DCE2192B9D800B47957 /* Main.storyboard */; };
@@ -23,9 +24,17 @@
 		A8EF3DF72192BA0B00B47957 /* UIButton+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3DE82192BA0B00B47957 /* UIButton+Localizable.swift */; };
 		A8EF3DF82192BA0B00B47957 /* UILabel+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3DE92192BA0B00B47957 /* UILabel+Localizable.swift */; };
 		A8EF3DF92192BA0B00B47957 /* UIBarButtonItem+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3DEA2192BA0B00B47957 /* UIBarButtonItem+Localizable.swift */; };
+		A8EF3E042192C5E900B47957 /* HCLocalizableResourcesFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3E012192C5E900B47957 /* HCLocalizableResourcesFilter.swift */; };
+		A8EF3E052192C5E900B47957 /* HCLanguageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3E022192C5E900B47957 /* HCLanguageModel.swift */; };
+		A8EF3E062192C5E900B47957 /* LanguageTypeAndBundle.json in Resources */ = {isa = PBXBuildFile; fileRef = A8EF3E032192C5E900B47957 /* LanguageTypeAndBundle.json */; };
+		A8EF3E092192C67500B47957 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A8EF3E0B2192C67500B47957 /* Localizable.strings */; };
+		A8EF3E0E2192CC6300B47957 /* HCPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3E0D2192CC6300B47957 /* HCPickerView.swift */; };
+		A8EF3E102192CCD800B47957 /* HCBaseDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3E0F2192CCD700B47957 /* HCBaseDialog.swift */; };
+		A8EF3E122192CD4900B47957 /* HCPickerTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3E112192CD4900B47957 /* HCPickerTopBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A666F03047BFF23874463C7B /* Pods-HCLanguageSwitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCLanguageSwitch.release.xcconfig"; path = "Target Support Files/Pods-HCLanguageSwitch/Pods-HCLanguageSwitch.release.xcconfig"; sourceTree = "<group>"; };
 		A8EF3DC72192B9D800B47957 /* HCLanguageSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCLanguageSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EF3DCA2192B9D800B47957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8EF3DCC2192B9D800B47957 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +53,16 @@
 		A8EF3DE82192BA0B00B47957 /* UIButton+Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Localizable.swift"; sourceTree = "<group>"; };
 		A8EF3DE92192BA0B00B47957 /* UILabel+Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Localizable.swift"; sourceTree = "<group>"; };
 		A8EF3DEA2192BA0B00B47957 /* UIBarButtonItem+Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Localizable.swift"; sourceTree = "<group>"; };
+		A8EF3E012192C5E900B47957 /* HCLocalizableResourcesFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCLocalizableResourcesFilter.swift; sourceTree = "<group>"; };
+		A8EF3E022192C5E900B47957 /* HCLanguageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCLanguageModel.swift; sourceTree = "<group>"; };
+		A8EF3E032192C5E900B47957 /* LanguageTypeAndBundle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LanguageTypeAndBundle.json; sourceTree = "<group>"; };
+		A8EF3E0A2192C67500B47957 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A8EF3E0C2192C6CD00B47957 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		A8EF3E0D2192CC6300B47957 /* HCPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCPickerView.swift; sourceTree = "<group>"; };
+		A8EF3E0F2192CCD700B47957 /* HCBaseDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCBaseDialog.swift; sourceTree = "<group>"; };
+		A8EF3E112192CD4900B47957 /* HCPickerTopBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HCPickerTopBar.swift; sourceTree = "<group>"; };
+		B2BB2A5F5A6CCB1920A5F716 /* Pods-HCLanguageSwitch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCLanguageSwitch.debug.xcconfig"; path = "Target Support Files/Pods-HCLanguageSwitch/Pods-HCLanguageSwitch.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3E77A7F9EE3B8CA84E2120 /* Pods_HCLanguageSwitch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HCLanguageSwitch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +70,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66AD9E1A2FC77F83AD3DC18D /* Pods_HCLanguageSwitch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5528A4F9AF10429569DCAB81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB3E77A7F9EE3B8CA84E2120 /* Pods_HCLanguageSwitch.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		62CCE399B8B6B99A2698EA65 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2BB2A5F5A6CCB1920A5F716 /* Pods-HCLanguageSwitch.debug.xcconfig */,
+				A666F03047BFF23874463C7B /* Pods-HCLanguageSwitch.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A8EF3DBE2192B9D800B47957 = {
 			isa = PBXGroup;
 			children = (
 				A8EF3DC92192B9D800B47957 /* HCLanguageSwitch */,
 				A8EF3DC82192B9D800B47957 /* Products */,
+				62CCE399B8B6B99A2698EA65 /* Pods */,
+				5528A4F9AF10429569DCAB81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -77,8 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				A8EF3DDD2192BA0B00B47957 /* LanguageSwitch */,
+				A8EF3DFF2192C5D100B47957 /* Demo */,
 				A8EF3DCA2192B9D800B47957 /* AppDelegate.swift */,
-				A8EF3DCC2192B9D800B47957 /* ViewController.swift */,
 				A8EF3DCE2192B9D800B47957 /* Main.storyboard */,
 				A8EF3DD12192B9DA00B47957 /* Assets.xcassets */,
 				A8EF3DD32192B9DA00B47957 /* LaunchScreen.storyboard */,
@@ -121,6 +160,45 @@
 			path = "UIKit+Localizable";
 			sourceTree = "<group>";
 		};
+		A8EF3DFF2192C5D100B47957 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				A8EF3E132192E6CD00B47957 /* View */,
+				A8EF3E002192C5E900B47957 /* Resources */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		A8EF3E002192C5E900B47957 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A8EF3E0B2192C67500B47957 /* Localizable.strings */,
+				A8EF3E012192C5E900B47957 /* HCLocalizableResourcesFilter.swift */,
+				A8EF3E022192C5E900B47957 /* HCLanguageModel.swift */,
+				A8EF3E032192C5E900B47957 /* LanguageTypeAndBundle.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A8EF3E132192E6CD00B47957 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8EF3DCC2192B9D800B47957 /* ViewController.swift */,
+				A8EF3E142192E6E400B47957 /* Dialog */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A8EF3E142192E6E400B47957 /* Dialog */ = {
+			isa = PBXGroup;
+			children = (
+				A8EF3E0D2192CC6300B47957 /* HCPickerView.swift */,
+				A8EF3E0F2192CCD700B47957 /* HCBaseDialog.swift */,
+				A8EF3E112192CD4900B47957 /* HCPickerTopBar.swift */,
+			);
+			path = Dialog;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -128,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A8EF3DD92192B9DA00B47957 /* Build configuration list for PBXNativeTarget "HCLanguageSwitch" */;
 			buildPhases = (
+				9D1329E8C02E1100C8F3E773 /* [CP] Check Pods Manifest.lock */,
 				A8EF3DC32192B9D800B47957 /* Sources */,
 				A8EF3DC42192B9D800B47957 /* Frameworks */,
 				A8EF3DC52192B9D800B47957 /* Resources */,
+				B9D16D2A22F1DB78B3C18EF5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +243,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = A8EF3DBE2192B9D800B47957;
 			productRefGroup = A8EF3DC82192B9D800B47957 /* Products */;
@@ -180,12 +261,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				A8EF3DD52192B9DA00B47957 /* LaunchScreen.storyboard in Resources */,
+				A8EF3E062192C5E900B47957 /* LanguageTypeAndBundle.json in Resources */,
 				A8EF3DD22192B9DA00B47957 /* Assets.xcassets in Resources */,
 				A8EF3DD02192B9D800B47957 /* Main.storyboard in Resources */,
+				A8EF3E092192C67500B47957 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9D1329E8C02E1100C8F3E773 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HCLanguageSwitch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9D16D2A22F1DB78B3C18EF5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HCLanguageSwitch/Pods-HCLanguageSwitch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HCLanguageSwitch/Pods-HCLanguageSwitch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A8EF3DC32192B9D800B47957 /* Sources */ = {
@@ -195,16 +325,21 @@
 				A8EF3DF62192BA0B00B47957 /* UITextView+Localizable.swift in Sources */,
 				A8EF3DF02192BA0B00B47957 /* HCLocalizableDeinitBlockExecutor.swift in Sources */,
 				A8EF3DCD2192B9D800B47957 /* ViewController.swift in Sources */,
+				A8EF3E122192CD4900B47957 /* HCPickerTopBar.swift in Sources */,
 				A8EF3DF82192BA0B00B47957 /* UILabel+Localizable.swift in Sources */,
+				A8EF3E0E2192CC6300B47957 /* HCPickerView.swift in Sources */,
 				A8EF3DF22192BA0B00B47957 /* NSObject+LocalizableDeinit.swift in Sources */,
 				A8EF3DCB2192B9D800B47957 /* AppDelegate.swift in Sources */,
 				A8EF3DF92192BA0B00B47957 /* UIBarButtonItem+Localizable.swift in Sources */,
+				A8EF3E102192CCD800B47957 /* HCBaseDialog.swift in Sources */,
 				A8EF3DEF2192BA0B00B47957 /* HCLocalizableManager.swift in Sources */,
 				A8EF3DF72192BA0B00B47957 /* UIButton+Localizable.swift in Sources */,
 				A8EF3DF32192BA0B00B47957 /* UITextField+Localizable.swift in Sources */,
 				A8EF3DF42192BA0B00B47957 /* UISearchBar+Localizable.swift in Sources */,
+				A8EF3E042192C5E900B47957 /* HCLocalizableResourcesFilter.swift in Sources */,
 				A8EF3DF52192BA0B00B47957 /* UITabBarItem+Localizable.swift in Sources */,
 				A8EF3DF12192BA0B00B47957 /* NSObject+Localizable.swift in Sources */,
+				A8EF3E052192C5E900B47957 /* HCLanguageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +362,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		A8EF3E0B2192C67500B47957 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8EF3E0A2192C67500B47957 /* en */,
+				A8EF3E0C2192C6CD00B47957 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -234,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -295,6 +440,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -348,6 +494,7 @@
 		};
 		A8EF3DDA2192B9DA00B47957 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2BB2A5F5A6CCB1920A5F716 /* Pods-HCLanguageSwitch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -365,6 +512,7 @@
 		};
 		A8EF3DDB2192B9DA00B47957 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A666F03047BFF23874463C7B /* Pods-HCLanguageSwitch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

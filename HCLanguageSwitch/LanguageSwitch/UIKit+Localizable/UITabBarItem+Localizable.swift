@@ -1,6 +1,6 @@
 /*******************************************************************************
  # File        : UITabBarItem+Localizable.swift
- # Project     : KuCoin
+ # Project     : HCLanguageSwitch
  # Author      : ZuoLuFei
  # Created     : 2018/8/29
  # Corporation : ####
