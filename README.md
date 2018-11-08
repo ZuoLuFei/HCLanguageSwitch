@@ -6,7 +6,7 @@
 ## 【Demo演示】
 
 
-![演示1](https://github.com/ZuoLuFei/DemoFigure/blob/master/HCTheme演示动图/HCTheme-1.gif)
+![演示1](https://github.com/ZuoLuFei/DemoFigure/blob/master/HCLanguageSwitch演示动图/HCLanguageSwitch-1.gif)
 
 
 /**********************************************************************/
