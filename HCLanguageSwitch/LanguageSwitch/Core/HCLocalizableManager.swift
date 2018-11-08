@@ -22,6 +22,7 @@ func DEF_LOCALIZED_STRING(key: String) -> String {
 // 用户语言存储Key
 class HCLocalizableManager: NSObject {
     private static let kBundleNameKey = "User_Language_Bundle_Name_Key"
+    private static let kInitializeLanguage = "Initialize_Language_Key"
 
     // 语言环境切换通知
     static let localizableDidChangeNotification = NSNotification.Name(rawValue: "com.zuolufei.HCLanguageSwitch.localizableDidChangeNotification")
@@ -35,9 +36,6 @@ class HCLocalizableManager: NSObject {
 
     /// 语言bundle
     private var bundle: Bundle?
-    
-    /// 语言更新Block回调
-    private var languageChangeBlock: (() -> Void)?
 
     /**
      * 加载指定bundle中的Key
@@ -54,24 +52,29 @@ class HCLocalizableManager: NSObject {
 
         self.bundle = Bundle(path: path)
         self.currentBundleName = bundleName
-
+        
         UserDefaults.standard.set(bundleName, forKey: HCLocalizableManager.kBundleNameKey)
         UserDefaults.standard.synchronize()
-
+        
         // 发送通知更新语言
         NotificationCenter.default.post(name: HCLocalizableManager.localizableDidChangeNotification, object: nil)
-        
-        languageChangeBlock?()
-        
     }
     
-    /// 原因刷新回调
-    func localizableDidChange(_ didChange: (() -> Void)?)  {
-        languageChangeBlock = didChange
+    /// 初始化语言环境，在程序第一次启动是才生效
+    func initializeLanguage(_ bundleName: String) {
+        guard let initialize = UserDefaults.standard.object(forKey: HCLocalizableManager.kInitializeLanguage),
+            initialize as? Bool == true else {
+                
+                updateLanguage(bundleName)
+                
+                UserDefaults.standard.set(true, forKey: HCLocalizableManager.kInitializeLanguage)
+                UserDefaults.standard.synchronize()
+                return
+        }
     }
     
     /// 当前的语言文件
-    var currentBundleName = "en"
+    private(set) var currentBundleName = "en"
 }
 
 // MARK: - 私有方法

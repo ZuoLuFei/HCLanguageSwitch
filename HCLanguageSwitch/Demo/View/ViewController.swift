@@ -22,6 +22,7 @@ class ViewController: UIViewController {
                                 
                                 let language = HCLocalizableResourcesFilter.share.names[index]
                                 guard let model = HCLocalizableResourcesFilter.share.modelFromName(language) else { return }
+                                // 切换语言，参数为bundleName
                                 HCLocalizableManager.share.updateLanguage(model.bundle)
                                 
                                 self?.currentLanguageLabel.text = DEF_LOCALIZED_STRING(key: "first_currentLanguage") + HCLocalizableResourcesFilter.share.currentLanguageName
@@ -33,21 +34,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /// 使用方式一
+        /// 使用方式一，正常推荐使用
         titleWordLabel.hc_Text = "first_inputName"
         changeLanuageBtn.hc_SetTitle("first_changeLanguage", for: .normal)
         
-        /// 使用方式二
+        /// 使用方式二，在拼接变量时使用
         currentLanguageLabel.text = DEF_LOCALIZED_STRING(key: "first_currentLanguage") + HCLocalizableResourcesFilter.share.currentLanguageName
         
-        /// 使用方法三
+        /// 使用方法三，在特殊情况，需要手动监听语言更新
         contentTextField.placeholder = DEF_LOCALIZED_STRING(key: "first_name")
-        HCLocalizableManager.share.localizableDidChange {[weak self] in
+        contentTextField.localizableDidChange { [weak self] in
             self?.contentTextField.placeholder = DEF_LOCALIZED_STRING(key: "first_name")
         }
-    
     }
 }
-
-
-

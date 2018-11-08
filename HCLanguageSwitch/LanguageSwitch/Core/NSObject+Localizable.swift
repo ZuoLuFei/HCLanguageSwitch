@@ -12,6 +12,9 @@ import UIKit
 var localizableDictsKey = "localizableDictsKey"
 private var kLocalizableDeinitBlocks = "kLocalizableDeinitBlocks"
 
+/// 语言更新Block回调
+private var languageChangeBlock: (() -> Void)?
+
 extension NSObject {
     var localizableDicts: [String: Any] {
         if let localizableDicts = objc_getAssociatedObject(self, &localizableDictsKey) as? [String: Any] {
@@ -55,6 +58,13 @@ extension NSObject {
             self.perform(sel, with: result)
 
         })
+        
+        languageChangeBlock?()
+    }
+    
+    /// 语言刷新回调
+    func localizableDidChange(_ didChange: (() -> Void)?)  {
+        languageChangeBlock = didChange
     }
 
     /**

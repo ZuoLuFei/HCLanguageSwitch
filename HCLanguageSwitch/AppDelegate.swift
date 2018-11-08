@@ -16,11 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        // 初始化国际化，默认为汉语
-//        HCLocalizableManager.share.updateLanguage("zh-Hans")
+        /**
+         初始化国际化为汉语，默认是英语
+         注意：只在程序第一次启动初始化时才生效
+         */
+        HCLocalizableManager.share.initializeLanguage("zh-Hans")
         
-        //主目录
-        print("NSHomeDirectory->\(NSHomeDirectory())")
         return true
     }
 
