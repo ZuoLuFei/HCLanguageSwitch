@@ -21,7 +21,7 @@ extension UITextView {
         }
 
         get {
-            return valueFor(&textKey) ?? ""
+            return language_valueFor(&textKey) ?? ""
         }
     }
 }

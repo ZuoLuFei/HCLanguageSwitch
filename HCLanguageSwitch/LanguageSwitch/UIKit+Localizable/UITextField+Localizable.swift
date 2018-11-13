@@ -22,7 +22,7 @@ extension UITextField {
         }
 
         get {
-            return valueFor(&textKey) ?? ""
+            return language_valueFor(&textKey) ?? ""
         }
     }
 
@@ -34,7 +34,7 @@ extension UITextField {
         }
 
         get {
-            return valueFor(&placeholderKey) ?? ""
+            return language_valueFor(&placeholderKey) ?? ""
         }
     }
 }

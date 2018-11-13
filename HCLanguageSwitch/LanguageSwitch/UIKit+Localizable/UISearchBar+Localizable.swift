@@ -21,7 +21,7 @@ extension UISearchBar {
         }
 
         get {
-            return valueFor(&textKey) ?? ""
+            return language_valueFor(&textKey) ?? ""
         }
     }
 
@@ -33,7 +33,7 @@ extension UISearchBar {
         }
 
         get {
-            return valueFor(&placeholderKey) ?? ""
+            return language_valueFor(&placeholderKey) ?? ""
         }
     }
 }

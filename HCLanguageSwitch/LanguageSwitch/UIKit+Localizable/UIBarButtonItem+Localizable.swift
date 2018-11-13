@@ -21,7 +21,7 @@ extension UIBarButtonItem {
         }
 
         get {
-            return valueFor(&titleKey) ?? ""
+            return language_valueFor(&titleKey) ?? ""
         }
     }
 }

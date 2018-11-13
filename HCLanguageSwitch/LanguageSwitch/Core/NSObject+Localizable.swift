@@ -82,7 +82,7 @@ extension NSObject {
     /**
      *
      */
-    func valueFor(_ dataKey: UnsafeRawPointer) -> String? {
+    func language_valueFor(_ dataKey: UnsafeRawPointer) -> String? {
         return objc_getAssociatedObject(self, dataKey) as? String
     }
 }

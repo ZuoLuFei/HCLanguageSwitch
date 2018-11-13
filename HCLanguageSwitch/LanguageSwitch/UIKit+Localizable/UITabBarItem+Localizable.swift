@@ -22,7 +22,7 @@ extension UITabBarItem {
         }
 
         get {
-            return valueFor(&titleKey) ?? ""
+            return language_valueFor(&titleKey) ?? ""
         }
     }
 

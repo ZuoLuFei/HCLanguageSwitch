@@ -21,7 +21,7 @@ extension UILabel {
         }
 
         get {
-            return valueFor(&textKey) ?? ""
+            return language_valueFor(&textKey) ?? ""
         }
     }
 }
