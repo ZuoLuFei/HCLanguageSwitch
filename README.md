@@ -41,18 +41,16 @@ HCLocalizableManager.share.updateLanguage("en")
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     /// 使用方式一，正常推荐使用
     titleWordLabel.hc_Text = "first_inputName"
     changeLanuageBtn.hc_SetTitle("first_changeLanguage", for: .normal)
-
-    /// 使用方式二，在拼接变量时使用
-    currentLanguageLabel.text = DEF_LOCALIZED_STRING(key: "first_currentLanguage") + HCLocalizableResourcesFilter.share.currentLanguageName
-
-    /// 使用方法三，在特殊情况，需要手动监听语言更新
-    contentTextField.placeholder = DEF_LOCALIZED_STRING(key: "first_name")
+    contentTextField.hc_PlaceholderSwitch = "first_name"
+    
+    /// 使用方法二，在特殊情况需要传输字符时，需要手动监听语言更新，注意：参数使用&&&进行分割
+    currentLanguageLabel.hc_Text = "first_currentLanguage%@%@" + "&&&" + HCLocalizableResourcesFilter.share.currentLanguageName + "&&&" + "first_inputName"
     contentTextField.localizableDidChange { [weak self] in
-    self?.contentTextField.placeholder = DEF_LOCALIZED_STRING(key: "first_name")
+        self?.currentLanguageLabel.text = String.init(format: DEF_LOCALIZED_STRING(key:"first_currentLanguage%@%@"), HCLocalizableResourcesFilter.share.currentLanguageName, DEF_LOCALIZED_STRING(key: "first_inputName"))
     }
 }
 ```

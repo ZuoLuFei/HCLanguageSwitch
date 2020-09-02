@@ -17,7 +17,8 @@ extension UITextField {
     /// text
     var hc_Text: String {
         set {
-            self.text = DEF_LOCALIZED_STRING(key: newValue)
+//            self.text = DEF_LOCALIZED_STRING(key: newValue)
+            self.text = NSObject.obtionSpliceLocalizeContent(original: newValue)
             registerLocalize(newValue, methodKey: "setText:", dataKey: &textKey)
         }
 
@@ -30,7 +31,8 @@ extension UITextField {
     var hc_PlaceholderSwitch: String {
         set {
             registerLocalize(newValue, methodKey: "setPlaceholder:", dataKey: &placeholderKey)
-            self.placeholder = DEF_LOCALIZED_STRING(key: newValue)
+//            self.placeholder = DEF_LOCALIZED_STRING(key: newValue)
+            self.placeholder = NSObject.obtionSpliceLocalizeContent(original: newValue)
         }
 
         get {

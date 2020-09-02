@@ -53,8 +53,9 @@ extension NSObject {
         localizableDicts.forEach({ (selectorKey, localizedKey) in
             let sel: Selector = Selector(selectorKey)
             let keyStr = (localizedKey as? String) ?? ""
-            let result = DEF_LOCALIZED_STRING(key: keyStr)
-
+//            let result = DEF_LOCALIZED_STRING(key: keyStr)
+            let result = NSObject.obtionSpliceLocalizeContent(original: keyStr)
+            
             self.perform(sel, with: result)
 
         })
@@ -84,5 +85,33 @@ extension NSObject {
      */
     func language_valueFor(_ dataKey: UnsafeRawPointer) -> String? {
         return objc_getAssociatedObject(self, dataKey) as? String
+    }
+    
+    
+    /// 获取拼接的国际化内容
+    /// - Parameter original: 原始内容，
+    /// - Returns: 国际化后的内容
+    static func obtionSpliceLocalizeContent(original: String) -> String {
+        print("original->",original)
+        let arr = original.components(separatedBy: "&&&")
+        var localized = ""
+        if arr.count < 2 {
+            localized = DEF_LOCALIZED_STRING(key: original)
+        } else {
+            for (index, value) in arr.enumerated() {
+                if index == 0 {
+                    localized = DEF_LOCALIZED_STRING(key: arr[0])
+                } else {
+                    print("oldlocalized->",localized)
+                    print("value->",value)
+                    localized = localized.replacingOccurrences(of: "(null)", with: "%@")
+                    print("replacelocalized->",localized)
+                    localized = String.init(format: localized, DEF_LOCALIZED_STRING(key: value))
+                    print("newlocalized->",localized)
+                    
+                }
+            }
+        }
+        return localized
     }
 }

@@ -64,6 +64,7 @@ class HCLocalizableResourcesFilter: NSObject {
     /// 当前的语言文字
     var currentLanguageName: String {
         get {
+            print("currentBundleName->",HCLocalizableManager.share.currentBundleName)
             return modelFromBundle(HCLocalizableManager.share.currentBundleName)?.name ?? "English"
         }
     }

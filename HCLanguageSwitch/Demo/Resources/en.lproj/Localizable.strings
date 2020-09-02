@@ -11,4 +11,5 @@
 "first_inputName"="Please enter your name";
 "first_name"="name";
 "first_changeLanguage"="Select the language";
-"first_currentLanguage"="Current language:";
+
+"first_currentLanguage%@%@"="Current language:%@%@";

@@ -16,7 +16,8 @@ extension UITextView {
     /// text
     var hc_Text: String {
         set {
-            self.text = DEF_LOCALIZED_STRING(key: newValue)
+//            self.text = DEF_LOCALIZED_STRING(key: newValue)
+            self.text = NSObject.obtionSpliceLocalizeContent(original: newValue)
             registerLocalize(newValue, methodKey: "setText:", dataKey: &textKey)
         }
 
