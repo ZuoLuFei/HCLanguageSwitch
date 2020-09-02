@@ -13,7 +13,7 @@ var localizableDictsKey = "localizableDictsKey"
 private var kLocalizableDeinitBlocks = "kLocalizableDeinitBlocks"
 
 /// 语言更新Block回调
-private var languageChangeBlock: (() -> Void)?
+var languageChangeBlock: (() -> Void)?
 
 extension NSObject {
     var localizableDicts: [String: Any] {
@@ -92,7 +92,6 @@ extension NSObject {
     /// - Parameter original: 原始内容，
     /// - Returns: 国际化后的内容
     static func obtionSpliceLocalizeContent(original: String) -> String {
-        print("original->",original)
         let arr = original.components(separatedBy: "&&&")
         var localized = ""
         if arr.count < 2 {
@@ -102,12 +101,8 @@ extension NSObject {
                 if index == 0 {
                     localized = DEF_LOCALIZED_STRING(key: arr[0])
                 } else {
-                    print("oldlocalized->",localized)
-                    print("value->",value)
                     localized = localized.replacingOccurrences(of: "(null)", with: "%@")
-                    print("replacelocalized->",localized)
                     localized = String.init(format: localized, DEF_LOCALIZED_STRING(key: value))
-                    print("newlocalized->",localized)
                     
                 }
             }

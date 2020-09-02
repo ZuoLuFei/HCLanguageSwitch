@@ -17,7 +17,6 @@ extension UITabBarItem {
     /// text
     var hc_Title: String {
         set {
-//            self.title = DEF_LOCALIZED_STRING(key: newValue)
             self.title = NSObject.obtionSpliceLocalizeContent(original: newValue)
             registerLocalize(newValue, methodKey: "setTitle:", dataKey: &titleKey)
         }

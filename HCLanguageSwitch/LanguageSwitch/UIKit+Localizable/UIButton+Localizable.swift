@@ -14,7 +14,6 @@ extension UIButton {
     /// setTitle:forState:
     func hc_SetTitle(_ title: String, for state: UIControlState) {
 
-//        self.setTitle(DEF_LOCALIZED_STRING(key: title), for: state)
         self.setTitle(NSObject.obtionSpliceLocalizeContent(original: title), for: state)
 
         var localizableDicts = self.localizableDicts
@@ -30,7 +29,6 @@ extension UIButton {
 
     /// setAttributedTitle:forState:
     func kcSetAttributedTitle(_ title: String, for state: UIControlState) {
-//        self.setAttributedTitle(NSAttributedString(string: DEF_LOCALIZED_STRING(key: title)), for: state)
         self.setAttributedTitle(NSAttributedString(string: NSObject.obtionSpliceLocalizeContent(original: title)), for: state)
 
         var localizableDicts = self.localizableDicts
@@ -60,12 +58,10 @@ extension UIButton {
 
                     if methodKey == "setTitle:forState:" {
 
-//                        self.setTitle(DEF_LOCALIZED_STRING(key: selectorStr), for: state)
                         self.setTitle(NSObject.obtionSpliceLocalizeContent(original: selectorStr), for: state)
 
                     } else if methodKey == "setAttributedTitle:forState:" {
 
-//                        self.setAttributedTitle(NSAttributedString(string: DEF_LOCALIZED_STRING(key: selectorStr)), for: state)
                         self.setAttributedTitle(NSAttributedString(string: NSObject.obtionSpliceLocalizeContent(original: selectorStr)), for: state)
 
                     }
@@ -73,13 +69,13 @@ extension UIButton {
             } else {
                 let sel: Selector = Selector(key)
                 let valueStr = (value as? String) ?? ""
-//                let result = DEF_LOCALIZED_STRING(key: valueStr)
                 let result = NSObject.obtionSpliceLocalizeContent(original: valueStr)
 
                 self.perform(sel, with: result)
             }
         })
 
+        languageChangeBlock?()
     }
 
 }
