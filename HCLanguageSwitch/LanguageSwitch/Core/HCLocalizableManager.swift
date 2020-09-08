@@ -12,9 +12,14 @@ import Foundation
 
 /***********************************国际化匹配*************************************/
 // MARK: 国际化匹配
-/// 国际化匹配
+/// 国际化文字
 func DEF_LOCALIZED_STRING(key: String) -> String {
     return HCLocalizableManager.share.localized(key)
+}
+
+/// 国际化图片
+func DEF_LOCALIZED_IMAGE_STRING(key: String) -> UIImage {
+    return HCLocalizableManager.share.imageOf(key: key)
 }
 
 /***********************************国际化匹配*************************************/
@@ -36,6 +41,13 @@ class HCLocalizableManager: NSObject {
 
     /// 语言bundle
     private var bundle: Bundle?
+    
+    /**
+     * 图片模型数据
+     * key: 主题key
+     * value: 图片字典
+     */
+    private var images: [String: Any] = [:]
 
     /**
      * 加载指定bundle中的Key
@@ -77,6 +89,20 @@ class HCLocalizableManager: NSObject {
     private(set) var currentBundleName = "en"
 }
 
+// MARK: - 国际化图片方法
+extension HCLocalizableManager {
+    /// 获取图片
+    func imageOf(key: String) -> UIImage {
+       
+       if let imageStr = (images[currentBundleName] as? [String: String])?[key],
+           let img = UIImage(named: imageStr) {
+           return img
+       }
+        
+       return UIImage(color: UIColor.black, size: CGSize(width: 10, height: 10))
+    }
+}
+
 // MARK: - 私有方法
 extension HCLocalizableManager {
     /// 初始化语言文件
@@ -85,6 +111,12 @@ extension HCLocalizableManager {
             updateLanguage(language)
         } else {
             updateLanguage(currentBundleName)
+        }
+        
+        // 加载国际化图片资源
+        if let path = Bundle.main.path(forResource: "LocalizableImage", ofType: "plist"),
+            let images = NSDictionary(contentsOfFile: path) as? [String: Any] {
+            self.images = images
         }
     }
 }

@@ -28,7 +28,7 @@ extension UIButton {
     }
 
     /// setAttributedTitle:forState:
-    func kcSetAttributedTitle(_ title: String, for state: UIControlState) {
+    func hc_SetAttributedTitle(_ title: String, for state: UIControlState) {
         self.setAttributedTitle(NSAttributedString(string: NSObject.obtionSpliceLocalizeContent(original: title)), for: state)
 
         var localizableDicts = self.localizableDicts
@@ -39,6 +39,44 @@ extension UIButton {
         localizableDicts.updateValue(dict, forKey: String("\(state.rawValue)"))
 
         objc_setAssociatedObject(self, &localizableDictsKey, localizableDicts, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+    
+    /// 设置backgroundImage
+    ///
+    /// - Parameters:
+    ///   - theme: 图片
+    ///   - state: 状态
+    func hc_setBackgroundImage(_ theme: String, forState state: UIControlState) {
+       
+        self.setBackgroundImage(HCLocalizableManager.share.imageOf(key: theme), for: state)
+
+        var localizableDicts = self.localizableDicts
+
+        var dict: [String: Any] = (localizableDicts[String("\(state.rawValue)")] as? [String: Any]) ?? [String: Any]()
+        dict.updateValue(theme, forKey: "setBackgroundImage:forState:")
+        localizableDicts.updateValue(dict, forKey: String("\(state.rawValue)"))
+
+        objc_setAssociatedObject(self, &localizableDictsKey, localizableDicts, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+
+    }
+
+    /// 设置Image
+    ///
+    /// - Parameters:
+    ///   - theme: 图片
+    ///   - state: 状态
+    func hc_setImage(_ theme: String, forState state: UIControlState) {
+
+        self.setImage(HCLocalizableManager.share.imageOf(key: theme), for: state)
+
+        var localizableDicts = self.localizableDicts
+
+        var dict: [String: Any] = (localizableDicts[String("\(state.rawValue)")] as? [String: Any]) ?? [String: Any]()
+        dict.updateValue(theme, forKey: "setImage:forState:")
+        localizableDicts.updateValue(dict, forKey: String("\(state.rawValue)"))
+
+        objc_setAssociatedObject(self, &localizableDictsKey, localizableDicts, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+
     }
 }
 

@@ -11,6 +11,8 @@
 import UIKit
 
 private var titleKey = "titleKey"
+private var imageKey = "imageKey"
+private var selectedImageKey = "selectedImageKey"
 
 extension UITabBarItem {
 
@@ -25,5 +27,35 @@ extension UITabBarItem {
             return language_valueFor(&titleKey) ?? ""
         }
     }
+    
+    /// image
+       var hc_Image: String? {
+           set {
+               guard let value = newValue else { return }
+               registerLocalize(value, methodKey: "setImage:", dataKey: &imageKey)
+
+               self.image = HCLocalizableManager.share.imageOf(key: value)
+           }
+
+           get {
+               guard let rawValue = language_valueFor(&imageKey) else { return nil }
+               return rawValue
+           }
+       }
+
+       /// selectedImage
+       var hc_SelectedImage: String? {
+           set {
+               guard let value = newValue else { return }
+               registerLocalize(value, methodKey: "setSelectedImage:", dataKey: &selectedImageKey)
+
+               self.selectedImage = HCLocalizableManager.share.imageOf(key: value)
+           }
+
+           get {
+               guard let rawValue = language_valueFor(&selectedImageKey) else { return nil }
+               return rawValue
+           }
+       }
 
 }
