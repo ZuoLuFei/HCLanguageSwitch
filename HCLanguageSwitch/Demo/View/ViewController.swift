@@ -21,11 +21,14 @@ class ViewController: UIViewController {
         
         /// 语言切换调用方法
         HCPickerView().show(datas: HCLocalizableResourcesFilter.share.names,
-                            confirm: {(index) in
+                            confirm: {[weak self] (index) in
                                 let language = HCLocalizableResourcesFilter.share.names[index]
                                 guard let model = HCLocalizableResourcesFilter.share.modelFromName(language) else { return }
                                 // 切换语言，参数为bundleName
                                 HCLocalizableManager.share.updateLanguage(model.bundle)
+                                
+                                print("titleWordLabel.hc_Text->%@", self?.titleWordLabel.hc_Text)
+//                                NSLog("titleWordLabel.hc_Text->%@", self?.titleWordLabel.hc_Text)
         })
     }
     
@@ -54,7 +57,7 @@ class ViewController: UIViewController {
         currentLanguageLabel.text = String.init(format: DEF_LOCALIZED_STRING(key:"first_currentLanguage%@%@"), HCLocalizableResourcesFilter.share.currentLanguageName, DEF_LOCALIZED_STRING(key: "first_inputName"))
         
         // 使用方法二：对语言感知度高，采用分类属性方法，此方法通过关联技术，会根据语言切换立即感知，并且切换语言（如界面是常驻界面，如UITabbarController界面，切换语言不会刷新界面，但是对语言切换感知度高，需要采用分类属性方法）
-        titleWordLabel.hc_Text = DEF_LOCALIZED_STRING(key: "first_inputName")
+        titleWordLabel.hc_Text = "first_inputName"
         changeLanuageBtn.hc_SetTitle("first_changeLanguage", for: .normal)
         contentTextField.hc_PlaceholderSwitch = "first_name"
         // 属性方法的字符串拼接
@@ -77,10 +80,10 @@ class ViewController: UIViewController {
     */
     func textLocalizebleImage() {
         // 使用方式一：对语言切换感知度低的界面，采用最近宏定义取值（如此界面不是常驻界面，加载必刷新，对语言切换响应感知度极低）
-        currentImageView.image = DEF_LOCALIZED_IMAGE_STRING(key: HCLocalizableImage.App_Store.rawValue)
+        currentImageView.image = DEF_LOCALIZED_IMAGE(key: "HC_App_Store")
         
         // 使用方法二：对语言感知度高，采用分类属性方法，此方法通过关联技术，会根据语言切换立即感知，并且切换语言（如此界面是常驻界面，如UITabbarController界面，切换语言不会刷新界面，但是对语言切换感知度高，需要采用分类属性方法）
-        currentImageView.hc_Image = HCLocalizableImage.App_Store.rawValue
+        currentImageView.hc_Image = "HC_App_Store"
     }
     
 }

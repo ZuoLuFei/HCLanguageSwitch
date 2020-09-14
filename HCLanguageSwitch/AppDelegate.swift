@@ -20,7 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          初始化国际化为汉语，默认是英语
          注意：只在程序第一次启动初始化时才生效
          */
-        HCLocalizableManager.share.initializeLanguage("zh-Hans")
+//        HCLocalizableManager.share.initializeLanguage("zh-Hans")
+//        HCLocalizableManager.share.initializeLanguage(nil, jsonName: "LocalizableImage")
+        HCLocalizableManager.share.initializeLanguage(nil, imageJsonName: "LocalizableImage")
         
         return true
     }

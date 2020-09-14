@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		66AD9E1A2FC77F83AD3DC18D /* Pods_HCLanguageSwitch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3E77A7F9EE3B8CA84E2120 /* Pods_HCLanguageSwitch.framework */; };
-		A8BAC6A5250723C9003CF52B /* HCLocalizableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAC6A4250723C9003CF52B /* HCLocalizableImage.swift */; };
-		A8BAC6A72507241A003CF52B /* LocalizableImage.plist in Resources */ = {isa = PBXBuildFile; fileRef = A8BAC6A62507241A003CF52B /* LocalizableImage.plist */; };
 		A8BAC6A92507274E003CF52B /* UIImage+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAC6A82507274E003CF52B /* UIImage+Localizable.swift */; };
 		A8BAC6AC25072D72003CF52B /* UIImageView+Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAC6AB25072D72003CF52B /* UIImageView+Localizable.swift */; };
+		A8C974CD250F619B007E5456 /* LocalizableImage_en.json in Resources */ = {isa = PBXBuildFile; fileRef = A8C974CB250F619B007E5456 /* LocalizableImage_en.json */; };
+		A8C974CE250F619B007E5456 /* LocalizableImage_zh.json in Resources */ = {isa = PBXBuildFile; fileRef = A8C974CC250F619B007E5456 /* LocalizableImage_zh.json */; };
 		A8EF3DCB2192B9D800B47957 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3DCA2192B9D800B47957 /* AppDelegate.swift */; };
 		A8EF3DCD2192B9D800B47957 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8EF3DCC2192B9D800B47957 /* ViewController.swift */; };
 		A8EF3DD02192B9D800B47957 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8EF3DCE2192B9D800B47957 /* Main.storyboard */; };
@@ -39,10 +39,10 @@
 
 /* Begin PBXFileReference section */
 		A666F03047BFF23874463C7B /* Pods-HCLanguageSwitch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HCLanguageSwitch.release.xcconfig"; path = "Target Support Files/Pods-HCLanguageSwitch/Pods-HCLanguageSwitch.release.xcconfig"; sourceTree = "<group>"; };
-		A8BAC6A4250723C9003CF52B /* HCLocalizableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HCLocalizableImage.swift; sourceTree = "<group>"; };
-		A8BAC6A62507241A003CF52B /* LocalizableImage.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LocalizableImage.plist; sourceTree = "<group>"; };
 		A8BAC6A82507274E003CF52B /* UIImage+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Localizable.swift"; sourceTree = "<group>"; };
 		A8BAC6AB25072D72003CF52B /* UIImageView+Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Localizable.swift"; sourceTree = "<group>"; };
+		A8C974CB250F619B007E5456 /* LocalizableImage_en.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocalizableImage_en.json; sourceTree = "<group>"; };
+		A8C974CC250F619B007E5456 /* LocalizableImage_zh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocalizableImage_zh.json; sourceTree = "<group>"; };
 		A8EF3DC72192B9D800B47957 /* HCLanguageSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HCLanguageSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8EF3DCA2192B9D800B47957 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A8EF3DCC2192B9D800B47957 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,15 +102,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		A8BAC6AA25072AEF003CF52B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				A8BAC6A4250723C9003CF52B /* HCLocalizableImage.swift */,
-				A8BAC6A62507241A003CF52B /* LocalizableImage.plist */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
 		A8EF3DBE2192B9D800B47957 = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +137,6 @@
 		A8EF3DDD2192BA0B00B47957 /* LanguageSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				A8BAC6AA25072AEF003CF52B /* Resources */,
 				A8EF3DDE2192BA0B00B47957 /* Core */,
 				A8EF3DE32192BA0B00B47957 /* UIKit+Localizable */,
 			);
@@ -196,6 +186,8 @@
 				A8EF3E012192C5E900B47957 /* HCLocalizableResourcesFilter.swift */,
 				A8EF3E022192C5E900B47957 /* HCLanguageModel.swift */,
 				A8EF3E032192C5E900B47957 /* LanguageTypeAndBundle.json */,
+				A8C974CB250F619B007E5456 /* LocalizableImage_en.json */,
+				A8C974CC250F619B007E5456 /* LocalizableImage_zh.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -282,9 +274,10 @@
 			files = (
 				A8EF3DD52192B9DA00B47957 /* LaunchScreen.storyboard in Resources */,
 				A8EF3E062192C5E900B47957 /* LanguageTypeAndBundle.json in Resources */,
-				A8BAC6A72507241A003CF52B /* LocalizableImage.plist in Resources */,
+				A8C974CD250F619B007E5456 /* LocalizableImage_en.json in Resources */,
 				A8EF3DD22192B9DA00B47957 /* Assets.xcassets in Resources */,
 				A8EF3DD02192B9D800B47957 /* Main.storyboard in Resources */,
+				A8C974CE250F619B007E5456 /* LocalizableImage_zh.json in Resources */,
 				A8EF3E092192C67500B47957 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,7 +335,6 @@
 				A8BAC6AC25072D72003CF52B /* UIImageView+Localizable.swift in Sources */,
 				A8EF3DF02192BA0B00B47957 /* HCLocalizableDeinitBlockExecutor.swift in Sources */,
 				A8EF3DCD2192B9D800B47957 /* ViewController.swift in Sources */,
-				A8BAC6A5250723C9003CF52B /* HCLocalizableImage.swift in Sources */,
 				A8EF3E122192CD4900B47957 /* HCPickerTopBar.swift in Sources */,
 				A8EF3DF82192BA0B00B47957 /* UILabel+Localizable.swift in Sources */,
 				A8EF3E0E2192CC6300B47957 /* HCPickerView.swift in Sources */,
@@ -517,6 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PM8LQ2BDW;
 				INFOPLIST_FILE = HCLanguageSwitch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -536,6 +529,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7PM8LQ2BDW;
 				INFOPLIST_FILE = HCLanguageSwitch/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
