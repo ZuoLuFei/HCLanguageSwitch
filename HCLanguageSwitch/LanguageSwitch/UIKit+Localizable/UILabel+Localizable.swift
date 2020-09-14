@@ -14,14 +14,29 @@ private var textKey = "textKey"
 extension UILabel {
 
     /// text
-    var hc_Text: String {
+    var hc_Text: String? {
         set {
-            self.text = NSObject.obtionSpliceLocalizeContent(original: newValue)
-            registerLocalize(newValue, methodKey: "setText:", dataKey: &textKey)
+            self.text = NSObject.obtionSpliceLocalizeContent(original: newValue ?? "")
+            registerLocalize(newValue ?? "", methodKey: "setText:", dataKey: &textKey)
         }
 
         get {
-            return language_valueFor(&textKey) ?? ""
+            return self.text
+//            return language_valueFor(&textKey) ?? ""
         }
     }
+    
+    
+//    /// text
+//    var hc_Text: String {
+//        set {
+//
+//            self.text = DEF_LOCALIZED_STRING(key: newValue)
+//            registerLocalize(newValue, methodKey: "setText:", dataKey: &textKey)
+//        }
+//
+//        get {
+//            return language_valueFor(&textKey) ?? ""
+//        }
+//    }
 }

@@ -92,6 +92,7 @@ extension NSObject {
     /// - Parameter original: 原始内容，
     /// - Returns: 国际化后的内容
     static func obtionSpliceLocalizeContent(original: String) -> String {
+//        print("original->",original)
         let arr = original.components(separatedBy: "&&&")
         var localized = ""
         if arr.count < 2 {
@@ -103,7 +104,6 @@ extension NSObject {
                 } else {
                     localized = localized.replacingOccurrences(of: "(null)", with: "%@")
                     localized = String.init(format: localized, DEF_LOCALIZED_STRING(key: value))
-                    
                 }
             }
         }

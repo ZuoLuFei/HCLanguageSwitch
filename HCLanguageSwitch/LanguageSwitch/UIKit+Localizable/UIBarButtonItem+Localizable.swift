@@ -16,12 +16,14 @@ extension UIBarButtonItem {
     /// text
     var hc_Title: String {
         set {
+//            self.title = DEF_LOCALIZED_STRING(key: newValue)
             self.title = NSObject.obtionSpliceLocalizeContent(original: newValue)
             registerLocalize(newValue, methodKey: "setTitle:", dataKey: &titleKey)
         }
 
         get {
-            return language_valueFor(&titleKey) ?? ""
+            return self.title ?? ""
+//            return language_valueFor(&titleKey) ?? ""
         }
     }
 }

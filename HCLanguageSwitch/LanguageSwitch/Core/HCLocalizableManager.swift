@@ -34,8 +34,6 @@ enum HCLocalizableLanguage: String {
     case vi = "vi" // 越南文
     case th = "th" // 泰文
 }
-
-
 /***********************************国际化匹配*************************************/
 
 // 用户语言存储Key
@@ -92,20 +90,13 @@ class HCLocalizableManager: NSObject {
         } catch {
         }
         
-        
-        
-//        if let path = Bundle.main.path(forResource: resourcePath, ofType: "json"),
-//            let images = NSDictionary(contentsOfFile: path) as? [String: Any] {
-//            self.images = images
-//        }
-        
         // 发送通知更新语言
         NotificationCenter.default.post(name: HCLocalizableManager.localizableDidChangeNotification, object: nil)
     }
     
     /// 初始化语言环境，在程序第一次启动是才生效
     /// - Parameters:
-    ///   - bundleName: 不同国家语言
+    ///   - bundleName: 不同国家语言，若传nil，表示默认获取系统语言
     ///   - imageJsonName: 图片名称json文件
     func initializeLanguage(_ bundleName: HCLocalizableLanguage?, imageJsonName: String) {
         guard let initialize = UserDefaults.standard.object(forKey: HCLocalizableManager.kInitializeLanguage),
@@ -161,8 +152,6 @@ extension HCLocalizableManager {
     /// 获取图片
     func imageOf(key: String) -> UIImage {
        
-//       if let imageStr = (images[currentBundleName] as? [String: String])?[key],
-//           let img = UIImage(named: imageStr) {
         if let imageStr = images[key],
             let img = UIImage(named: imageStr) {
            return img
@@ -173,7 +162,6 @@ extension HCLocalizableManager {
     
     /// 获取国际化图片名称
     func imageStringOf(key: String) -> String {
-//        if let imageStr = (images[currentBundleName] as? [String: String])?[key] {
         if let imageStr = images[key] {
             return imageStr
         }

@@ -24,7 +24,8 @@ extension UITabBarItem {
         }
 
         get {
-            return language_valueFor(&titleKey) ?? ""
+            return self.title ?? ""
+//            return language_valueFor(&titleKey) ?? ""
         }
     }
     
