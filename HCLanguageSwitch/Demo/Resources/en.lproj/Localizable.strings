@@ -5,11 +5,12 @@
   Created by ZuoLuFei on 2018/11/7.
   Copyright © 2018 佐路飞. All rights reserved.
 */
-"common_cancel"="Cancel";
-"common_confire"="Confirm";
+"KG_取消"="Cancel";
+"KG_确认"="Confirm";
 
-"first_inputName"="Please enter your name";
+"KG_请输入姓名"="Please enter your name";
 "first_name"="name";
 "first_changeLanguage"="Select the language";
 
-"first_currentLanguage%@%@"="Current language:%@%@";
+//"first_currentLanguage%@%@"="Current language:%@%@";
+"KG_当前语言：%@---%@"="Current language:%@---%@";
