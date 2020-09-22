@@ -44,6 +44,9 @@ class HCLocalizableManager: NSObject {
     // 语言环境切换通知
     static let localizableDidChangeNotification = NSNotification.Name(rawValue: "com.zuolufei.HCLanguageSwitch.localizableDidChangeNotification")
     
+    /// 语言更新Block回调
+    private var languageChangeBlock: (() -> Void)?
+    
     /// 单例
     static let share: HCLocalizableManager = {
         let instance = HCLocalizableManager()
@@ -66,6 +69,11 @@ class HCLocalizableManager: NSObject {
      */
     func localized(_ key: String) -> String {
         return bundle?.localizedString(forKey: key, value: nil, table: nil) ?? ""
+    }
+    
+    /// 语言刷新回调
+    func languageDidChange(_ didChange: (() -> Void)?)  {
+        languageChangeBlock = didChange
     }
 
     /**
@@ -91,6 +99,7 @@ class HCLocalizableManager: NSObject {
         }
         
         // 发送通知更新语言
+        languageChangeBlock?()
         NotificationCenter.default.post(name: HCLocalizableManager.localizableDidChangeNotification, object: nil)
     }
     
@@ -121,7 +130,6 @@ class HCLocalizableManager: NSObject {
 //        debugPrint("当前系统语言:\(preferredLang)")
         return simplifyLanguage(preferredLang)
     }
-    
     
     /// 精简语言
     private func simplifyLanguage(_ languange: String) -> String {

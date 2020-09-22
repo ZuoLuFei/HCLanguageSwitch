@@ -40,6 +40,15 @@ class ViewController: UIViewController {
         
         // MARK: - 图片国际化
         textLocalizebleImage()
+        
+        HCLocalizableManager.share.languageDidChange(<#T##didChange: (() -> Void)?##(() -> Void)?##() -> Void#>)
+        
+        //语言切换监听
+        HCLocalizableManager.share.languageDidChange {
+            debugPrint("语言切换了")
+            // 当前语言type,后端需要数据
+            debugPrint("当前语言type:" + HCLocalizableResourcesFilter.share.currentLanguageType)
+        }
     }
     
     /**

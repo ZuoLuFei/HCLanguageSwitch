@@ -39,7 +39,7 @@ class HCPickerTopBar: UIView {
         cancelBtn.contentHorizontalAlignment = .left
         cancelBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         cancelBtn.setTitleColor(UIColor.black, for: .normal)
-        cancelBtn.hc_SetTitle("common_cancel", for: .normal)
+        cancelBtn.hc_SetTitle("KG_取消", for: .normal)
         
         let confirmBtn = UIButton()
         self.confirmBtn = confirmBtn
@@ -52,6 +52,6 @@ class HCPickerTopBar: UIView {
         confirmBtn.contentHorizontalAlignment = .right
         confirmBtn.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         confirmBtn.setTitleColor(UIColor.black, for: .normal)
-        confirmBtn.hc_SetTitle("common_confire", for: .normal)
+        confirmBtn.hc_SetTitle("KG_确认", for: .normal)
     }
 }
